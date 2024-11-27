@@ -1,5 +1,8 @@
 <?php
 
+var_dump($_POST);
+die();
+
 /**
  * Set env variables and enable error reporting in local environment
  */

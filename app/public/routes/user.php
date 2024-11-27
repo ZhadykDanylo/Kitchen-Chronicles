@@ -9,6 +9,7 @@ Route::add('/users', function () {
 });
 
 Route::add('/user/([a-z-0-9-]*)', function ($userId) {
+
     $userController = new UserController();
     $user = $userController->get($userId);
     require_once(__DIR__ . "/../views/pages/user.php");
