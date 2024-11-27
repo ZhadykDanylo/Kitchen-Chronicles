@@ -1,7 +1,6 @@
 <?php
 
 require_once(__DIR__ . "/../models/UserModel.php");
-require_once(__DIR__ . "/../dto/UserDTO.php");
 
 class UserController
 {
@@ -11,12 +10,12 @@ class UserController
         $this->userModel = new UserModel();
     }
 
-    public function getAll(): array
+    public function getAll()
     {
         return $this->userModel->getAll();
     }
 
-    public function get(int $id): ?UserDTO
+    public function get($id)
     {
         return $this->userModel->get($id);
     }

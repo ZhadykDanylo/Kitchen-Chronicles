@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * NOTE! this base model handles initializing PDO
+ * 
+ * To use PDO in a derived class, use self::$pdo
+ */
+
 class BaseModel
 {
 
