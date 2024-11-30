@@ -14,10 +14,10 @@
             <h1>Welcome to Kitchen Chronicles</h1>
             <p class="subtitle">Sign in to explore, share, and enjoy delicious recipes with the community!</p>
             <form class="login-form">
-                <label for="email">Email Address</label>
+                <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 
-                <label for="password">Password</label>
+                <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 
                 <button type="submit" class="login-button">Sign In</button>
