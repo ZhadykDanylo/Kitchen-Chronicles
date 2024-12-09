@@ -109,17 +109,30 @@ body {
 
 .illustration-container {
     flex: 1;
-    background-color: #000000;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    min-height: 300px;
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    padding: 10px;
+    background-color: #000000; /* Keep the black background */
+    max-width: 50%; /* Adjust box width */
+    height: 90%; /* Maintain proportional height */
 }
 
-.illustration img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
+.illustration-container img {
+    max-width: 100%; /* Restrict the image width to the container */
+    max-height: 90%; /* Ensure it doesn’t overflow the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Scale the image to fit while preserving its aspect ratio */
+    display: block; /* Center alignment adjustment *//* Consistent rounded corners */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .illustration-container {
+        max-width: 80%; /* Slightly larger on smaller screens for better visibility */
+    }
+
+    .illustration-container img {
+        max-width: 80%;
+    }
 }
