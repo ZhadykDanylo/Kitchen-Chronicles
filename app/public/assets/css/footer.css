@@ -5,7 +5,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px; /* Match the height of the header */
+    height: 80px; /* Match header height */
+    margin-top: 20px; /* Space between footer and content */
 }
 
 .footer-links li a {
@@ -22,7 +23,7 @@
 }
 
 .footer-links li {
-    margin-right: 60px; /* Space between links */
+    margin-right: 40px; /* Space between links */
 }
 
 

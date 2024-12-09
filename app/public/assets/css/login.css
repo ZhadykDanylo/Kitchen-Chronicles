@@ -8,6 +8,8 @@ body {
 .container {
     display: flex;
     align-items: stretch;
+    margin-top: 20px; /* Space from header */
+    margin-bottom: 20px; /* Space from footer */
 }
 
 .login-form-container {
