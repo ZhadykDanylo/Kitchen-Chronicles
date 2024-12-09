@@ -10,13 +10,14 @@
 
     <link rel="stylesheet" href="../../assets/css/login.css">
     <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/footer.css">
 </head>
 <body>
     <?php include(__DIR__ . '/../partials/header_nav.php'); ?>
 
     <div class="container">
         <!-- Login Form -->
-        <div id="login-form" class="login-form-container">
+        <div id="login-form" class="login-form-container" style="display: none;">
             <h1>Welcome to Kitchen Chronicles</h1>
             <p class="subtitle">Sign in to explore, share, and enjoy delicious recipes with the community!</p>
 
@@ -29,7 +30,7 @@
                 
                 <button type="submit" class="login-button">Sign In</button>
                 <p class="forgot-password"><a href="#">Forgot Password?</a></p>
-                <p class="sign-up">Not a member? <a href="#" onclick="toggleForms('signup-form')">Sign up</a> and start sharing your favorite recipes today!</p>
+                <p class="sign-up">Not a member? <a href="login.php?form=signup">Sign up</a> today!</p>
             </form>
         </div>
 
@@ -49,7 +50,7 @@
                 <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
                 
                 <button type="submit" class="login-button" style="background-color: #28a745;">Sign Up</button>
-                <p class="forgot-password"><a href="#" onclick="toggleForms('login-form')">Already have an account? Log In</a></p>
+                <p class="forgot-password"><a href="login.php?form=login">Already have an account? Log In</a></p>
             </form>
         </div>
 
@@ -59,6 +60,8 @@
             </div>
         </div>
     </div>
+
+    <?php include(__DIR__ . '/../partials/footer.php'); ?>
 
     <script src="../../assets/js/main.js"></script>
 </body>

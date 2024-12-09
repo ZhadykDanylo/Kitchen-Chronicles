@@ -10,3 +10,9 @@ function toggleForms(formIdToShow) {
         signupForm.style.display = 'block';
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const formToShow = urlParams.get('form') === 'signup' ? 'signup-form' : 'login-form';
+    toggleForms(formToShow);
+});

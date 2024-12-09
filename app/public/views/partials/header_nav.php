@@ -23,12 +23,11 @@
             </ul>
         </nav>
         <div class="d-flex">
-            <a href="#" class="btn btn-primary btn-sm px-3 shadow-sm d-inline-flex align-items-center me-3" onclick="toggleForms('login-form')">
+            <a href="login.php?form=login" class="btn btn-primary btn-sm px-3 shadow-sm d-inline-flex align-items-center me-3">
                 <i class="fas fa-sign-in-alt me-1"></i> Log In
             </a>
-            <a href="#" class="btn btn-success btn-sm px-3 shadow-sm d-inline-flex align-items-center" onclick="toggleForms('signup-form')">
+            <a href="login.php?form=signup" class="btn btn-success btn-sm px-3 shadow-sm d-inline-flex align-items-center">
                 <i class="fas fa-user-plus me-1"></i> Sign Up
             </a>
         </div>
-    </div>
 </header>
