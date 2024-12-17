@@ -21,12 +21,12 @@
             <h1>Welcome to Kitchen Chronicles</h1>
             <p class="subtitle">Sign in to explore, share, and enjoy delicious recipes with the community!</p>
 
-            <form class="login-form">
+            <form class="login-form" method="post">
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <input type="password" id="password" name="pwd" placeholder="Enter your password" required>
                 
                 <button type="submit" class="login-button">Sign In</button>
                 <p class="forgot-password"><a href="#">Forgot Password?</a></p>
@@ -39,15 +39,18 @@
             <h1>Join Kitchen Chronicles</h1>
             <p class="subtitle">Create an account to start sharing and enjoying recipes!</p>
 
-            <form class="login-form">
+            <form class="login-form" method="post">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <input type="text" id="name" name="uid" placeholder="Enter your name" required>
                 
                 <label for="email">Email Address:</label>
                 <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
                 
                 <label for="password">Password:</label>
-                <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+                <input type="password" id="signup-password" name="pwd" placeholder="Create a password" required>
+
+                <label for="password">Repeat your password:</label>
+                <input type="password" id="signup-password" name="pwdrepeat" placeholder="Create a password" required>
                 
                 <button type="submit" class="login-button" style="background-color: #28a745;">Sign Up</button>
                 <p class="forgot-password"><a href="login.php?form=login">Already have an account? Log In</a></p>

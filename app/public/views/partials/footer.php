@@ -7,9 +7,9 @@
             <li><a href="#" class="text-decoration-none text-dark">Support</a></li>
         </ul>
         <div class="d-flex">
-            <a href="#" class="text-decoration-none me-3"><i class="fab fa-facebook fs-5 text-dark"></i></a>
-            <a href="#" class="text-decoration-none me-3"><i class="fab fa-twitter fs-5 text-dark"></i></a>
-            <a href="#" class="text-decoration-none"><i class="fab fa-instagram fs-5 text-dark"></i></a>
+            <a href="https://www.facebook.com/" class="text-decoration-none me-3" target="_blank"><i class="fab fa-facebook fs-5 text-dark"></i></a>
+            <a href="https://www.twitter.com/" class="text-decoration-none me-3" target="_blank"><i class="fab fa-twitter fs-5 text-dark"></i></a>
+            <a href="https://www.instagram.com/" class="text-decoration-none" target="_blank"><i class="fab fa-instagram fs-5 text-dark"></i></a>
         </div>
     </div>
 </footer>
