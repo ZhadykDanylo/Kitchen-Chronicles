@@ -12,7 +12,7 @@
         {
             $stmt = $this->db->prepare("SELECT * FROM users WHERE email = :email");
             $stmt -> execute([':email' => $email]);
-            return $stmt -> fetch;
+            return $stmt -> fetch();
         }
 
         public function createUser($username, $email, $password)

@@ -38,22 +38,23 @@
         <div id="signup-form" class="login-form-container" style="display: none;">
             <h1>Join Kitchen Chronicles</h1>
             <p class="subtitle">Create an account to start sharing and enjoying recipes!</p>
-
-            <form class="login-form" method="post">
+            <form class="login-form" action="../../routes/web.php?route=register" method="post">
+            <form class="login-form" action="../../routes/web.php?route=register" method="post">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="uid" placeholder="Enter your name" required>
+                <input type="text" id="name" name="username" placeholder="Enter your name" required>
                 
                 <label for="email">Email Address:</label>
                 <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
                 
                 <label for="password">Password:</label>
-                <input type="password" id="signup-password" name="pwd" placeholder="Create a password" required>
+                <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
 
-                <label for="password">Repeat your password:</label>
-                <input type="password" id="signup-password" name="pwdrepeat" placeholder="Create a password" required>
+                <label for="password_repeat">Repeat your password:</label>
+                <input type="password" id="signup-password-repeat" name="password_repeat" placeholder="Repeat your password" required>
                 
                 <button type="submit" class="login-button" style="background-color: #28a745;">Sign Up</button>
                 <p class="forgot-password"><a href="login.php?form=login">Already have an account? Log In</a></p>
+            </form>
             </form>
         </div>
 
