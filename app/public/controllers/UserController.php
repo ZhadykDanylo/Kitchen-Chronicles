@@ -1,6 +1,6 @@
 <?php
 require_once '../models/UserModel.php';
-require_once '../lib/Database.php';
+require_once '../config/database.php';
 
 class UserController
 {
@@ -12,7 +12,7 @@ class UserController
         $this->userModel = new UserModel($database->connect());
     }
 
-    public function register()
+        public function register()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = htmlspecialchars(trim($_POST['username']));
@@ -20,43 +20,78 @@ class UserController
             $password = trim($_POST['password']);
             $passwordRepeat = trim($_POST['password_repeat']);
 
-            // 1. Check for empty fields
+            // Check for empty fields
             if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
-                header("Location: ../../views/pages/login.php?form=signup&error=empty_fields");
-                exit();
+                $_SESSION['error'] = "All fields are required.";
+                return;
             }
 
-            // 2. Validate email format
+            // Validate email format
             if (!$email) {
-                header("Location: ../../views/pages/login.php?form=signup&error=invalid_email");
-                exit();
+                $_SESSION['error'] = "Invalid email format.";
+                return;
             }
 
-            // 3. Password confirmation
+            // Password confirmation
             if ($password !== $passwordRepeat) {
-                header("Location: ../../views/pages/login.php?form=signup&error=password_mismatch");
-                exit();
+                $_SESSION['error'] = "Passwords do not match.";
+                return;
             }
 
-            // 4. Check password strength
+            // Check password strength
             if (!$this->isPasswordStrong($password)) {
-                die("Password must have at least 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.");
+                $_SESSION['error'] = "Password must have at least 8 characters, including uppercase, lowercase, numbers, and special characters.";
+                return;
             }
 
-            // 5. Check if user already exists
+            // Check if user already exists
             if ($this->userModel->userExists($email)) {
-                header("Location: ../../views/pages/login.php?form=signup&error=user_exists");
-                exit();
+                $_SESSION['error'] = "User already exists.";
+                return;
             }
 
-            // 6. Create the user
+            // Create the user
             if ($this->userModel->createUser($username, $email, $password)) {
-                header("Location: ../../views/pages/login.php?form=signup&success=registered");
-                exit();
+                $_SESSION['success'] = "Registration successful!";
             } else {
-                header("Location: ../../views/pages/login.php?form=signup&error=registration_failed");
+                $_SESSION['error'] = "Registration failed. Please try again.";
+            }
+        }
+    }
+
+    public function login()
+    {
+        session_start();
+    
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+            $password = trim($_POST['password']);
+    
+            if (empty($email) || empty($password)) {
+                $_SESSION['error'] = "Email and password are required.";
+                header("Location: ../../views/pages/login.php?form=login");
                 exit();
             }
+    
+            $user = $this->userModel->userExists($email);
+    
+            if (!$user || !password_verify($password, $user['password'])) {
+                $_SESSION['error'] = "Invalid email or password.";
+                header("Location: ../../views/pages/login.php?form=login");
+                exit();
+            }
+    
+            $_SESSION['user'] = [
+                'id' => $user['id'],
+                'username' => $user['username'],
+                'email' => $user['email']
+            ];
+    
+            header("Location: ../../views/pages/index.php"); // Redirect to a dashboard or home page
+            exit();
+        } else {
+            echo "Invalid request method.";
+            exit();
         }
     }
 

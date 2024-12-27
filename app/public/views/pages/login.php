@@ -21,14 +21,14 @@
             <h1>Welcome to Kitchen Chronicles</h1>
             <p class="subtitle">Sign in to explore, share, and enjoy delicious recipes with the community!</p>
 
-            <form class="login-form" method="post">
+            <form class="login-form" action="../../routes/web.php?route=login" method="post">
                 <label for="email">Email Address:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="pwd" placeholder="Enter your password" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 
-                <button type="submit" class="login-button">Sign In</button>
+                <button type="submit" class="login-button">Log In</button>
                 <p class="forgot-password"><a href="#">Forgot Password?</a></p>
                 <p class="sign-up">Not a member? <a href="login.php?form=signup">Sign up</a> today!</p>
             </form>
@@ -38,8 +38,7 @@
         <div id="signup-form" class="login-form-container" style="display: none;">
             <h1>Join Kitchen Chronicles</h1>
             <p class="subtitle">Create an account to start sharing and enjoying recipes!</p>
-            <form class="login-form" action="../../routes/web.php?route=register" method="post">
-            <form class="login-form" action="../../routes/web.php?route=register" method="post">
+            <form class="login-form" action="../../routes/web.php?route=signup" method="post">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="username" placeholder="Enter your name" required>
                 
@@ -54,7 +53,7 @@
                 
                 <button type="submit" class="login-button" style="background-color: #28a745;">Sign Up</button>
                 <p class="forgot-password"><a href="login.php?form=login">Already have an account? Log In</a></p>
-            </form>
+                <p> ... </p>
             </form>
         </div>
 
